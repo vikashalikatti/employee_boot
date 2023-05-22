@@ -92,7 +92,7 @@ public class Employee_service {
 		Optional<Employee_dto> existingEmployee = Optional.ofNullable(dao.fetchbyid(id));
 
 		if (existingEmployee.isPresent()) {
-			dto.setId(existingEmployee.get().getId());
+			dto.setId(existingEmployee.get().getId()); // Set the ID of the dto object to the existing employee's ID
 			RepositoryStructure<Employee_dto> repositoryStructure = new RepositoryStructure<>();
 			repositoryStructure.setMessage("Data updated successfully");
 			repositoryStructure.setStatusCode(HttpStatus.OK.value());
